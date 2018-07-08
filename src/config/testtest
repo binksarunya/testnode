@@ -1,0 +1,59 @@
+[
+    {
+        "uname": "Massey",
+        "text": "as sint eu amet et ad ex ipsum",
+        "retweetCount": 10,
+        "create": ISODate("2015-02-14T07:26:31Z")
+    },
+
+    {
+        "uname": "Annette",
+        "text": "excepteur pariatur est incididunt",
+        "retweetCount": 8,
+        "create": ISODate("2014-06-11T07:41:17Z")
+    },
+[
+    {
+        "uname": "Hazel",
+        "text": "esso proident esse adipisicing",
+        "retweetCount": 9,
+        "create": ISODate("2015-05-12T04:40:48Z")
+    },
+
+    {
+        "uname": "Petty",
+        "text": "magna ea laboris proident",
+        "retweetCount": 6,
+        "create": ISODate("2014-02-17T11:20:04Z")
+    },
+
+    {
+        "uname": "June",
+        "text": "incididunt magna cillum",
+        "retweetCount": 4,
+        "create": ISODate("2014-03-05T09:59:06Z")
+    }
+
+]
+
+db.tweet.update(
+    { uname: "June"},
+    {
+        "uname": "June",
+        "text": "Hello june update.",
+        "retweetCount": 5,
+        "create": ISODate("2014-03-05T09:59:06Z")
+    }
+)
+
+db.tweet.update(
+    { uname: "June" },
+    { $set: {
+        text: "Hello june update 2 ja",
+        retweetCount: 300
+    }}
+)
+
+db.tweet.remove(
+    { create: {$lt:ISODate('2015-01-01T00:00:00Z')}}
+)
