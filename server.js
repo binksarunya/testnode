@@ -45,5 +45,5 @@ app.use('/', helloWorld);*/
 app.listen(3000);
 module.exports = app;
 
-console.log('Server running.. port3000');
+console.log('Listening on .. port 3000');
 
